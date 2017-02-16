@@ -1,0 +1,13 @@
+<h1>{{product.name}}</h1>
+
+<img src={{product.photo}} height="300" />
+
+<p>{{product.description}}</p>
+
+<p>{{product.cost}}</p>
+
+<form action="{{url_for('Review', product_id=product.id)}}" method="post">
+	Watchu think cuh?
+	<input type="text" name="Review">
+	<input type="submit" name="This what I think man">
+</form>

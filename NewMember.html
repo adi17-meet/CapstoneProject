@@ -1,0 +1,34 @@
+<h1> New Member </h1>
+
+<div class = 'flash'>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+
+		<ul>
+		{% for message in messages%}
+			<li> <strong> {{message}} </strong></li>
+		{% endfor %}	
+		</ul>
+		{% endif %}
+	{% endwith %}
+
+<form action="{{url_for('NewMember')}}" method='post'>
+	Name
+	<br>
+	<input type="text" name="Name">
+	<br>
+	Street Name
+	<br>
+	<input type="text" name="Email">
+	<br>
+	Crib Address
+	<br>
+	<input type="text" name="Address">
+	<br>
+	Code
+	<br>
+	<input type="password" name="Code">
+	  <input type="submit" value="Join the Crew!">
+
+</form>
+</div> 

@@ -1,0 +1,18 @@
+<h1> All the Reviews for {{AllReviews.customer.name}} </h1>
+
+{%if AllReviews.products ==[]%}
+<p>None is reviewed... Step your shoe game up</p>
+{% else %}
+<table>
+	<tr><th>Shoe</th><th>Price</th><th>Amount of Reviews</th></tr>
+{% for item in AllReviews.products%}
+	<tr>
+		<td>{{item.product.name}}</td>
+		<td>{{item.product.price}}</td>
+
+		<td><form action={{url_for('updateReviews', product_id = item.product.id)}}> method='post'><input type='number' name='Review'></td>
+		<td><input type="submit" name="Add Review"></td></form>
+		<td><form action={{url_for('DeleteReview', product_id = item.product.id)}} method="post"> <input type="submit" name="Delete Review"></form></td>
+	</tr>
+	{% endfor %}
+</table>

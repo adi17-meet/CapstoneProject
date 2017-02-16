@@ -1,0 +1,11 @@
+<h1> Log In! </h1>
+
+<form action="{{url_for('login')}}" method='post'>
+  What's Your Street Name?
+  <input type="text" name="Email">
+  What's the Code?
+  <input type="password" name="The Secret Code">
+   <input type="submit" value="Enter the Club">
+</form>
+
+<p>Not a Member of ShoeCrew? Do the trials <a href={{url_for('NewMember')}}>Psst...Here</a>

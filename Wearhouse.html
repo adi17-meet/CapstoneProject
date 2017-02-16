@@ -1,0 +1,16 @@
+<!---Showing all shoes-->
+
+{% if items ==[]%}
+<p> We ain't got no kicks to be reviewed...</p>
+
+{% else %}
+<div>
+	{% for item in items %}
+	<a href="{{url_for('product', product_id = item.id)}}">
+		<p>{{item.name}}</p>
+		<img src={{item.photo}} height="250" >
+	</a>
+	{% endfor %} 
+</div>
+
+{% endif %}
